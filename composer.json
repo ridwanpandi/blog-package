@@ -11,5 +11,10 @@
     "minimum-stability": "dev",
     "require": {
         "firebase/php-jwt": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ridwanpandi\\Blog\\": "src/"
+        }
     }
 }
