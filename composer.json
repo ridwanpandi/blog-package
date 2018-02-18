@@ -1,0 +1,15 @@
+{
+    "name": "ridwanpandi/blog",
+    "description": "blog micro services package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ridwan",
+            "email": "ridwanpandiromansah@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "firebase/php-jwt": "dev-master"
+    }
+}
