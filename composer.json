@@ -1,5 +1,5 @@
 {
-    "name": "ridwanpandi/blog",
+    "name": "ridwanpandi/blog-package",
     "description": "blog micro services package",
     "license": "MIT",
     "authors": [
@@ -10,6 +10,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
+        "php": ">=5.3.0",
         "firebase/php-jwt": "dev-master"
     },
     "autoload": {

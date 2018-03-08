@@ -34,7 +34,7 @@ class TokenController extends Controller
         $tokenId    = base64_encode(mcrypt_create_iv(32));
         $issuedAt   = time();
         $notBefore  = $issuedAt + 10;             //Adding 10 seconds
-        $expire     = $notBefore + 60;            // Adding 60 seconds
+        $expire     = $notBefore + 6000;            // Adding 60 seconds
         $serverName = $_SERVER['HTTP_HOST'];
 
         $data = [

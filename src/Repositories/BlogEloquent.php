@@ -21,7 +21,7 @@ class BlogEloquent implements BlogRepository
     * Get all data
     * @return boolean
     */
-    public function getAll($page = 10)
+    public function getAll($page = 5)
     {
         if (!empty($page)) {
             return $this->model->paginate($page);
@@ -37,6 +37,16 @@ class BlogEloquent implements BlogRepository
     public function create(array $attributes)
     {
         return $this->model->create($attributes);
+    }
+
+    /**
+    * Update blog
+    * @param Array $attributes
+    * @return boolean
+    */
+    public function update(array $attributes, $id)
+    {
+	return $this->model->where("blog_id", $id)->update($attributes);
     }
 
     /**

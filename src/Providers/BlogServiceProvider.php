@@ -27,7 +27,7 @@ class BlogServiceProvider extends ServiceProvider
     public function register()
     {
 
-        include (__DIR__."/../../vendor/autoload.php");
+        //include (__DIR__."/../../vendor/autoload.php");
 
         // Blog Repositories
         $this->app->singleton(
@@ -43,6 +43,10 @@ class BlogServiceProvider extends ServiceProvider
         $this->app->make('Ridwanpandi\Blog\Http\Middleware\JWTMiddleware');
         $this->app->make('Ridwanpandi\Blog\Models\Blog');
         $this->app->make('Ridwanpandi\Blog\Models\Meta');
+
+        $this->publishes([
+            __DIR__.'/../Database' => base_path('database/migrations'),
+        ]);
 
         $this->app->routeMiddleware([
             'jwt' => \Ridwanpandi\Blog\Http\Middleware\JWTMiddleware::class,

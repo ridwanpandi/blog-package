@@ -39,7 +39,6 @@ class BlogController extends Controller
     */
     public function create(Request $request)
     {
-        // dd($request->header('authorization'));
         $this->validate($request, [
             'title' => 'required',
             'content' => 'required',
@@ -48,6 +47,24 @@ class BlogController extends Controller
         ]);
 
         return $this->blog->create($request->all());
+    }
+
+    /**
+    * Update quote
+    *
+    * @param Array
+    * @return Response
+    */
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'title' => 'required',
+            'content' => 'required',
+            'description' => 'required',
+            'author' => 'required'
+        ]);
+
+        return $this->blog->update($request->all(), $id);
     }
 
     /**
